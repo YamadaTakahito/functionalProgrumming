@@ -19,9 +19,9 @@ transByConfig config = trans (ofs config)
 
 rotateByConfig :: Config -> CoordConverter
 rotateByConfig config = postTrans.rotate(theta config).preTrans where
-rotateAt = rotAt config
-preTrans = trans (rotate pi $ rotateAt)
-postTrans = trans rotateAt
+    rotateAt = rotAt config
+    preTrans = trans (rotate pi $ rotateAt)
+    postTrans = trans rotateAt
 
 convertByConfig :: Config -> CoordConverter
 convertByConfig config = transByConfig config . rotateByConfig config
