@@ -1,4 +1,6 @@
 *.class
 *.hi
 *.o
+
 1.2/Optional
+*
