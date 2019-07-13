@@ -1,4 +1,3 @@
-
 function clone(obj) {
     var f = function () { };
     f.prototype = obj;
@@ -19,8 +18,6 @@ var trans = function (dx, dy) {
         return result;
     }
 }
-
-
 
 var rotate = function (theta) {
     return function (coord) {
@@ -44,14 +41,6 @@ var rotateByConfig = function (config) {
         )
     );
 }
-// var rotateByConfig = function (config) {
-//     return function (coord) {
-//         var preTrans = trans(-config.rotAt.x, -config.rotAt.y, coord);
-//         var rotated = rotate(config.theta, preTrans);
-//         var postTrans = trans(config.rotAt.x, config.rotAt.y, rotated);
-//         return postTrans;
-//     }
-// }
 
 var convertByConfig = function (config) {
     return compose(
@@ -68,7 +57,6 @@ var config = {
     'ofsX': 0.5, 'ofsY': 0.5
 };
 
-
 var unit_rect = [{ 'x': 0, 'y': 0 }, { 'x': 0, 'y': 1 }, { 'x': 1, 'y': 1 }, { 'x': 1, 'y': 0 }];
 
 var converted_rect = unit_rect.map(function (coord) {
@@ -78,5 +66,3 @@ var converted_rect = unit_rect.map(function (coord) {
 converted_rect.map(function (coord) {
     console.log('(' + coord.x.toFixed(6) + ',' + coord.y.toFixed(6) + ')');
 })
-
-
